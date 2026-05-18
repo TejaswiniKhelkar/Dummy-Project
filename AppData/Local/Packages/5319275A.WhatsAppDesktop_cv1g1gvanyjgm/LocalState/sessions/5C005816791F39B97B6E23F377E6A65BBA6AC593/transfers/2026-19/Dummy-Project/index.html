@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QuickRescue | Emergency SOS</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="page-bg">
+    <div class="glow-dot glow-1"></div>
+    <div class="glow-dot glow-2"></div>
+    <div class="glow-dot glow-3"></div>
+  </div>
+
+  <div class="app-container">
+    <header class="app-header">
+      <div>
+        <h1>QuickRescue</h1>
+        <p>Emergency SOS help dashboard</p>
+      </div>
+      <button id="themeToggle" class="theme-button">Toggle Theme</button>
+    </header>
+
+    <main class="content-grid">
+      <section class="glass-card sos-card">
+        <h2>Quick SOS</h2>
+        <p>Press the button to send an emergency alert immediately.</p>
+        <button id="sosButton" class="sos-button">SEND SOS</button>
+        <div class="status-card">
+          <h3>Emergency Status</h3>
+          <p id="statusText">Ready. No alert sent yet.</p>
+        </div>
+      </section>
+
+      <section class="glass-card map-card">
+        <div class="map-header">
+          <h2>Live Location</h2>
+          <div class="coords">
+            <span id="latText">Lat: --</span>
+            <span id="lngText">Lng: --</span>
+          </div>
+        </div>
+        <div id="map" class="map-frame"></div>
+      </section>
+
+      <section class="glass-card history-card">
+        <h2>Alert History</h2>
+        <p>Previous SOS alerts are saved in your browser.</p>
+        <ul id="alertList" class="history-list"></ul>
+      </section>
+    </main>
+
+    <div id="popup" class="popup hidden">
+      <p>SOS Sent Successfully!</p>
+    </div>
+  </div>
+
+  <script src="map.js"></script>
+  <script src="script.js"></script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"></script>
+</body>
+</html>
